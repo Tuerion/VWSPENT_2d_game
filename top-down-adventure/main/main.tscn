@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://34wm18e6n2q6" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://dyg3kyquwh8ex" path="res://coin/coin.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://cwgretdq7kboq" path="res://interface/interface.tscn" id="5_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://i2mwcfgvc4fa" path="res://enemy/enemy.tscn" id="6_kfbq2"]
 
 [node name="Main" type="Node" unique_id=244225426]
 script = ExtResource("1_3wy1v")
@@ -36,6 +37,9 @@ position = Vector2(894, 375)
 
 [node name="Coin4" parent="." unique_id=553439378 instance=ExtResource("3_xwkvk")]
 position = Vector2(231, 438)
+
+[node name="Enemy" parent="." unique_id=311645207 instance=ExtResource("6_kfbq2")]
+position = Vector2(324, 500)
 
 [connection signal="coins_changed" from="Player" to="." method="_on_player_coins_changed"]
 [connection signal="coin_collected" from="Coin" to="." method="_on_coin_coin_collected"]

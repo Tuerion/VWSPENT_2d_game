@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://i2mwcfgvc4fa"]
+
+[ext_resource type="Texture2D" uid="uid://mhfgwel6wtfw" path="res://icon.svg" id="1_2mvqj"]
+[ext_resource type="Script" uid="uid://t2lfx4fpk0ru" path="res://enemy/enemy.gd" id="1_ofsxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8cw4"]
+size = Vector2(54, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lta3v"]
+size = Vector2(56, 58)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=311645207]
+script = ExtResource("1_ofsxj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1485665061]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2mvqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=134958523]
+shape = SubResource("RectangleShape2D_p8cw4")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1391129761]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=81159464]
+visible = false
+shape = SubResource("RectangleShape2D_lta3v")
+debug_color = Color(0.7454971, 0.30842945, 0.86435366, 0.41960785)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1806472759]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
