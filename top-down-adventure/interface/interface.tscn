@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cwgretdq7kboq"]
+
+[node name="Interface" type="CanvasLayer" unique_id=1483090520]
+
+[node name="Control" type="Control" parent="." unique_id=1156566806]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=814696308]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins:"
+
+[node name="CoinCount" type="Label" parent="Control" unique_id=44465357]
+layout_mode = 0
+offset_left = 51.0
+offset_right = 91.0
+offset_bottom = 23.0
+text = "0"
+metadata/_edit_use_anchors_ = true

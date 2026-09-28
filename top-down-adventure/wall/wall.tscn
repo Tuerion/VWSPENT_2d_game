@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cgyxuqgv8ykd0"]
+
+[ext_resource type="Texture2D" uid="uid://55ug3hb5ejh0" path="res://wall/wall_long.png" id="1_sef87"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_644j0"]
+radius = 17.0
+height = 54.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fa16m"]
+size = Vector2(269, 54)
+
+[node name="Wall" type="StaticBody2D" unique_id=1872579645]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642059999]
+texture = ExtResource("1_sef87")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=238190480]
+position = Vector2(134, 0)
+shape = SubResource("CapsuleShape2D_644j0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1681239428]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_fa16m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1935089392]
+position = Vector2(-134, 0)
+shape = SubResource("CapsuleShape2D_644j0")

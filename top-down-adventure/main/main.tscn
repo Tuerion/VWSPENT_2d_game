@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cmjtmd6j2opoi"]
+
+[ext_resource type="Script" uid="uid://c60c8jmi0gj32" path="res://main/main.gd" id="1_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://cgyxuqgv8ykd0" path="res://wall/wall.tscn" id="1_53q0u"]
+[ext_resource type="PackedScene" uid="uid://34wm18e6n2q6" path="res://player/player.tscn" id="2_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://dyg3kyquwh8ex" path="res://coin/coin.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://cwgretdq7kboq" path="res://interface/interface.tscn" id="5_3wy1v"]
+
+[node name="Main" type="Node" unique_id=244225426]
+script = ExtResource("1_3wy1v")
+
+[node name="Wall2" parent="." unique_id=1872579645 instance=ExtResource("1_53q0u")]
+position = Vector2(591, 516)
+
+[node name="Wall" parent="." unique_id=876525103 instance=ExtResource("1_53q0u")]
+position = Vector2(155, 233)
+rotation = 0.5564827
+
+[node name="Wall3" parent="." unique_id=279411080 instance=ExtResource("1_53q0u")]
+position = Vector2(985, 262)
+rotation = 0.15844327
+
+[node name="Player" parent="." unique_id=556264348 instance=ExtResource("2_pjrb6")]
+position = Vector2(555, 396)
+
+[node name="Coin" parent="." unique_id=1157086921 instance=ExtResource("3_xwkvk")]
+position = Vector2(394, 240)
+
+[node name="Interface" parent="." unique_id=1483090520 instance=ExtResource("5_3wy1v")]
+
+[node name="Coin2" parent="." unique_id=223250585 instance=ExtResource("3_xwkvk")]
+position = Vector2(649, 195)
+
+[node name="Coin3" parent="." unique_id=291160748 instance=ExtResource("3_xwkvk")]
+position = Vector2(894, 375)
+
+[node name="Coin4" parent="." unique_id=553439378 instance=ExtResource("3_xwkvk")]
+position = Vector2(231, 438)
+
+[connection signal="coins_changed" from="Player" to="." method="_on_player_coins_changed"]
+[connection signal="coin_collected" from="Coin" to="." method="_on_coin_coin_collected"]
